@@ -1,0 +1,264 @@
+.navbar{
+  border-bottom: 1px solid #6ca4ff;
+  box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.page-content{
+  background:#FBFAFF;
+  /*background: #FFFFEC;*/
+}
+
+.navbar.navbar-header,.card{
+  background: #FFFFFF;
+}
+
+.navbar.navbar-header{
+  height: 100px;
+}
+
+.navbar.navbar-header > .navbar-inner{
+  height:auto;
+}
+
+.page-content.account, .page-content.confirm-checkin{
+  margin-top: 100px;
+  margin-bottom:100px;
+  padding-bottom:150px;
+}
+
+.page-content.confirm-checkin{
+  padding-bottom:0px;
+}
+
+.pp{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
+  margin-left: -50px;
+  border-radius: 50%;
+  border-color: #FBEF00;
+  border-width: 5px;
+  border-style: solid;
+  z-index: 16;
+}
+
+.button{
+  height: auto;
+  margin:30px;
+  padding:10px;
+  background: #FBEF00;
+  border:none;
+  font-size: 20px;
+  font-weight: bold;
+  color:#000;
+}
+
+.list-block .input-title{
+  color:#228BFF;
+  font-size:14px;
+  min-height: 0px;
+  margin-top:25px;
+}
+
+.list-block.nude ul, .list-block.nude ul:before,.list-block.nude ul:after,.list-block.nude .item-inner:after{
+  background: inherit;
+}
+
+.list-block input[type=time], .list-block.nude input[type=number], .list-block.nude input[type=text], .list-block.nude input[type=password], .list-block.nude input[type=search], .list-block.nude input[type=email], .list-block.nude input[type=tel], .list-block.nude input[type=url], .list-block.nude input[type=date] , .list-block.nude select, .list-block.nude textarea {
+  border-bottom: 1px solid #bfbfbf;
+  color:#888888;
+}
+
+.list-block.nude textarea{
+  border:1px solid #bfbfbf;
+  margin-top:15px;
+  padding:5px;
+}
+
+.show-password{
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 20px;
+}
+
+.or{
+  text-align: center;
+}
+
+hr.or {
+  border:none;
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+  width: 200px;
+}
+hr.or:after {
+    content: 'or';
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    padding: 0 10px;
+    background:#FBFAFF;
+    color: #8c8b8b;
+    font-size: 18px;
+}
+
+.button-fb{
+  background:#4F6DC0;
+  color:white;
+  font-size:14px;
+  margin-top:0px;
+}
+
+.toolbar.toolbar-white {
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+  color:#228BFF;
+}
+
+.toolbar.toolbar-white:before{
+  background:inherit;
+}
+
+.item-after > i{
+  font-size:20px;
+}
+
+.item-content sub{
+  color:#8c8b8b;
+}
+
+.input-time {
+  margin-top:10px;
+}
+
+.item-input.input-time > input{
+  width:60%;
+  display: inline;
+}
+
+.input-time > .item-after{
+  width: 30%;
+  display: inline;
+  font-size: 14px;
+}
+
+.input-time .item-after .f7-icons{
+  font-size: 14px;
+}
+
+.item-after .label-switch{
+  margin-right: 20px;
+}
+
+input[type=text].box{
+  border: 1px solid lightgray;
+  text-align: center;
+}
+
+input#start-am, input#end-am{
+  padding:0;
+  margin:0;
+  border:none;
+  display:inline;
+  width: 15%;
+}
+
+.green{
+  color:#00E849;
+}
+
+.gray,.item-title, .navbar,.confirm-checkin{
+  /*color:#b78989;*/
+  color:#888888;
+}
+
+.blue,.confirm-checkin .title{
+  color:#228BFF;
+}
+
+.black{
+  color:#111111;
+  font-weight: bold;
+}
+
+.content-block-title{
+  font-size: 22px;
+  color:#228BFF;
+  text-transform: none;
+}
+
+.confirm-checkin .title{
+  font-size: 30px;
+  margin:15px 10px 5px 10px;
+  padding:0;
+}
+
+.confirm-checkin .subtitle{
+  font-size: 16px;
+  margin: 5px;
+}
+
+.confirm-checkin .card p{
+  margin:0px;
+}
+
+.id-card{
+  padding:5px 50px 5px 50px;
+}
+
+.id-card img{
+  width: 100%;
+  height: auto;
+}
+
+.img-full{
+  width: 100%;
+  height: 100%;
+}
+
+.page-content.qr{
+  text-align: center;
+  color:#111111;
+  padding-top:80px;
+}
+
+.qr p{
+  margin : 5px;
+}
+
+.qr .title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.qr .qr-code{
+  margin: 10px 50px 10px 50px;
+  padding:10px;
+}
+
+.qr .qr-code > img{
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+}
+
+.qr .info .info-title{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.qr .info .no{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.qr .info .datetime, .qr .info .datetime p, .qr .info .datetime hr{
+  display: inline;
+}
