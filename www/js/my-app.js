@@ -10,10 +10,16 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: false
 });
 
+//set init view
+mainView.router.load({
+  url: "splash.html",
+  reload: true
+});
+
 //SPLASH
 myApp.onPageInit('splash',function(page){
   setTimeout(function(){
-    mainView.router.loadPage('index.html');
+    mainView.router.loadPage('login.html');
   },3000);
 });
 
@@ -25,9 +31,7 @@ myApp.onPageInit('login',function (page){
 });
 
 myApp.onPageInit("new-promo",function(page){
-
   myApp.alert('Waktu Promo tidak boleh lebih dari 12 jam','');
-
   var pickerHotel = myApp.picker({
     input: '#hotel-picker',
     cols: [
@@ -77,9 +81,37 @@ myApp.onPageInit("new-promo",function(page){
   });
 });
 
-//CHECKIN
-myApp.onPageInit('checkin',function(page){
-  $$('#btnCheckIn').on('click',function(){
-    mainView.router.loadPage('index.html');
+//QR CODE
+myApp.onPageInit("qr",function(page){
+  myApp.modal({
+    title:  '',
+    text: '<p style="padding:10px 20px 10px 20px;font-size:20px;">Can\'t Recognize QR Code</p>',
+    buttons: [
+      {
+        text: 'Try Again',
+        onClick: function() {
+
+        }
+      },
+      {
+        text: '<span class="gray">Cancel</span>',
+        onClick: function() {
+
+        }
+      },
+    ]
   });
+
+  setTimeout(function(){
+    mainView.router.loadPage('confirm-loading.html');
+  },3000);
+});
+
+myApp.onPageInit("confirm-loading",function(page){
+  setTimeout(function(){
+    mainView.router.loadPage({
+      url:'confirm-checkin.html',
+      animatePages:false
+    });
+  },3000);
 });
