@@ -46,14 +46,20 @@
                     <a href="#" class="button set-hotel-location">Set Hotel Location</a>
                   </div>
                   <div class="col-50 coordinate">
-                    <p>-5.12321424242</p>
-                    <p>102.4224242424</p>
+                    <div class="lat">
+                      <p>-5.12321424242</p>
+                      <input type="hidden" name="lat"/>
+                    </div>
+                    <div class="lng">
+                      <p>102.4224242424</p>
+                      <input type="hidden" name="lng" />
+                    </div>
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="map"></div>
+              <div id="map"></div>
             </li>
             <li>
               <div class="item-content input-title">
@@ -105,7 +111,8 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-input">
+                  <div class="item-input" id="star-input">
+                    <input type="hidden" name="star"/>
                     <div class="stars">
                       <img class="star yellow"/>
                       <img class="star yellow"/>

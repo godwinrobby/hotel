@@ -12,7 +12,8 @@ var mainView = myApp.addView('.view-main', {
 
 //set init view
 mainView.router.load({
-  url: "splash.html",
+//  url: "dummy-menu.html",
+url: "splash.html",
   reload: true
 });
 
@@ -90,7 +91,7 @@ myApp.onPageInit("qr",function(page){
       {
         text: 'Try Again',
         onClick: function() {
-
+          mainView.router.loadPage('confirm-loading.html');
         }
       },
       {
@@ -101,10 +102,6 @@ myApp.onPageInit("qr",function(page){
       },
     ]
   });
-
-  setTimeout(function(){
-    mainView.router.loadPage('confirm-loading.html');
-  },3000);
 });
 
 myApp.onPageInit("confirm-loading",function(page){
@@ -114,4 +111,73 @@ myApp.onPageInit("confirm-loading",function(page){
       animatePages:false
     });
   },3000);
+});
+
+myApp.onPageInit("add-hotel",function(page){
+
+  //init map
+  var location = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+   zoom: 4,
+   center: location
+  });
+  //init marker
+  var marker = new google.maps.Marker({
+    map:map,
+    title:'Location'
+  });
+
+  // add listener
+  google.maps.event.addListener(map, 'click', function(event) {
+     setMarker(event.latLng);
+  });
+
+  //callback listener
+  function setMarker(location) {
+    //add marker
+    marker.setMap(null);
+    marker = new google.maps.Marker({
+        position: location,
+        map: map,
+    });
+    map.setCenter(location);
+    map.setZoom(7);
+
+    //change value
+    $$(".lat").children('p').text(location.lat());
+    $$(".lat").children('input').val(location.lat());
+    $$(".lng").children('p').text(location.lng());
+    $$(".lng").children('input').val(location.lng());
+  }
+
+
+  // Widget Bintang
+  var starinput = $$('#star-input');
+  var input = $$('#star-input').children('input');
+  var stars = starinput.children('.stars').children('.star');
+
+  //grab all stars
+  for(i=0;i<stars.length;i++){
+    (function(i){
+      stars[i].addEventListener('click',function(){
+        changeStar(i);
+      },false);
+    }(i));
+  }
+
+  //change star color
+  function changeStar(i){
+    console.log('bintang ke '+i+' di klik');
+    input.val(i);
+    for(j=0;j<stars.length;j++){
+      if(j<=i){
+        $$(stars[j]).removeClass('gray');
+        $$(stars[j]).addClass('yellow');
+      }else{
+        $$(stars[j]).removeClass('yellow');
+        $$(stars[j]).addClass('gray');
+      }
+    }
+  }
+
 });

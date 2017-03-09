@@ -52,7 +52,7 @@
 }
 
 .page-content.confirm-checkin{
-  padding-bottom:0px;
+  padding-bottom:90px;
 }
 
 .pp{
@@ -199,6 +199,10 @@ input#start-am, input#end-am{
   width: 15%;
 }
 
+div.new-promo{
+  padding-bottom:30px;
+}
+
 .bg-yellow,.panel div:not(#logout) li:active, .sub-navbar {
   background:#f9ec0e;
 }
@@ -281,11 +285,16 @@ input#start-am, input#end-am{
   padding:10px;
 }
 
-.qr .qr-code > img{
+.qr .qr-code img{
   max-width: 400px;
   max-height: 400px;
-  width: auto;
-  height: auto;
+}
+
+@media screen and (max-width: 320px) {
+    .qr .qr-code img {
+      max-width: 150px;
+      max-height: 150px;
+    }
 }
 
 .qr .info .info-title{
@@ -415,6 +424,7 @@ input#start-am, input#end-am{
   width: inherit;
   border-radius: 10px;
   padding-top: 10px;
+  z-index: 16;
 }
 
 .main.toolbar .toolbar-item.active p{
@@ -454,27 +464,29 @@ div.toolbar-main > .page-content{
   border-left: 5px solid #f9ec0e;
 }
 
+
 .promo .card.disable{
   border: none;
   opacity: .3;
 }
 
 .promo .card p.title{
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .promo .card p.subtitle{
   margin-right: 10px;
+  font-size: 12px;
 
 }
 
 .promo .card p.price{
-  font-size: 16px;
+  font-size: 12px;
   text-align: right;
 }
 
 .promo .card p.date{
-  font-size: 12px;
+  font-size: 10px;
   text-align: right;
 }
 
@@ -501,7 +513,7 @@ div.toolbar-main > .page-content{
   bottom:100px;
 }
 
-.hotel .card .row{
+.hotel .card .row,.promo .card .row{
   text-align: left;
 }
 
@@ -539,7 +551,7 @@ div.toolbar-main > .page-content{
 }
 
 
-.map{
+#map{
   background: url('../img/map.jpg');
   width: 100%;
   height: 200px;
@@ -718,7 +730,7 @@ img.star.empty{
 }
 .bids .info{
   letter-spacing: 0.5px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .bids .info img{
   width: 12px;
@@ -726,7 +738,9 @@ img.star.empty{
 }
 
 .bids .item-subtitle .button{
-  width:100px;
+  min-width:70px;
+  max-width: 120px;
+  width: auto;
   padding: 5px;
   margin: 0px;
   border-radius: 20px;
@@ -734,6 +748,22 @@ img.star.empty{
   font-size: 14px;
   letter-spacing: 2px
 }
+
+@media screen and (max-width: 320px) {
+  .bids .item-media img{
+    width:30px;
+    height: 30px;
+  }
+
+  .bids .item-subtitle .button{
+    width: 50px;
+  }
+
+  .bids .info{
+    font-size: 10px;
+  }
+}
+
 
 .no-data{
   position: absolute;
@@ -796,5 +826,4 @@ img.star.empty{
   90.1% { transform: rotate(324deg); }
   99.9% { transform: rotate(324deg); }
   100%  { transform: rotate(360deg); }
-
 }
